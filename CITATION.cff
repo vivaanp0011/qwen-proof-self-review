@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the paper if you use the benchmark or its results."
+type: dataset
+title: "Self-review of real-analysis proofs"
+authors:
+  - family-names: "Pinglikar"
+    given-names: "Vivaan"
+    affiliation: "Independent researcher"
+version: "1.0.0"
+date-released: 2026-11-18
+repository-code: "https://github.com/vivaanp0011/qwen-proof-self-review"
+keywords:
+  - benchmarking
+  - real analysis
+  - language models
+  - self-correction
+  - Lean
