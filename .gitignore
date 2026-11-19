@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+runs/
+.lake/
+*.aux
+*.log
+*.out
+*.synctex.gz

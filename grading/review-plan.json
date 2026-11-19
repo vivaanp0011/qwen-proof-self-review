@@ -1,0 +1,114 @@
+{
+  "jobs": [
+    {
+      "problem_id": "P05",
+      "stage": "A",
+      "blind_id": "R-1592992B14"
+    },
+    {
+      "problem_id": "P01",
+      "stage": "A",
+      "blind_id": "R-FD8BC83EB2"
+    },
+    {
+      "problem_id": "P08",
+      "stage": "B",
+      "blind_id": "R-ECD4F123D7"
+    },
+    {
+      "problem_id": "P09",
+      "stage": "C",
+      "blind_id": "R-6D74E82A30"
+    },
+    {
+      "problem_id": "P10",
+      "stage": "A",
+      "blind_id": "R-F9B817FBA3"
+    },
+    {
+      "problem_id": "P10",
+      "stage": "B",
+      "blind_id": "R-CF00540BEA"
+    },
+    {
+      "problem_id": "P08",
+      "stage": "A",
+      "blind_id": "R-E17D98D986"
+    },
+    {
+      "problem_id": "P02",
+      "stage": "B",
+      "blind_id": "R-78CBC48F85"
+    },
+    {
+      "problem_id": "P02",
+      "stage": "A",
+      "blind_id": "R-817AC51833"
+    },
+    {
+      "problem_id": "P06",
+      "stage": "A",
+      "blind_id": "R-33B65B4F39"
+    },
+    {
+      "problem_id": "P09",
+      "stage": "B",
+      "blind_id": "R-0A1F1AD127"
+    },
+    {
+      "problem_id": "P07",
+      "stage": "A",
+      "blind_id": "R-078C4E965C"
+    },
+    {
+      "problem_id": "P10",
+      "stage": "C",
+      "blind_id": "R-142A4B5A32"
+    },
+    {
+      "problem_id": "P03",
+      "stage": "A",
+      "blind_id": "R-199A4C1750"
+    },
+    {
+      "problem_id": "P08",
+      "stage": "C",
+      "blind_id": "R-934DFA15CA"
+    },
+    {
+      "problem_id": "P02",
+      "stage": "C",
+      "blind_id": "R-73EC55A697"
+    },
+    {
+      "problem_id": "P04",
+      "stage": "A",
+      "blind_id": "R-4440955E55"
+    },
+    {
+      "problem_id": "P09",
+      "stage": "A",
+      "blind_id": "R-61B9C2F21F"
+    }
+  ],
+  "grade_order": [
+    "R-61B9C2F21F",
+    "R-FD8BC83EB2",
+    "R-1592992B14",
+    "R-E17D98D986",
+    "R-F9B817FBA3",
+    "R-73EC55A697",
+    "R-934DFA15CA",
+    "R-078C4E965C",
+    "R-6D74E82A30",
+    "R-817AC51833",
+    "R-0A1F1AD127",
+    "R-142A4B5A32",
+    "R-33B65B4F39",
+    "R-CF00540BEA",
+    "R-4440955E55",
+    "R-199A4C1750",
+    "R-78CBC48F85",
+    "R-ECD4F123D7"
+  ]
+}

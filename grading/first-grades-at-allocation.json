@@ -1,0 +1,46 @@
+{
+  "grades": {
+    "P01": {
+      "grade": "correct",
+      "reason": ""
+    },
+    "P02": {
+      "grade": "incorrect",
+      "reason": "The forward block sum is at most M a_M, so its smallness does not bound M a_M from above. The restart obtains a bound on M a_(2M−1) but does not finish the argument for all indices. No nonmonotone summable counterexample is given."
+    },
+    "P03": {
+      "grade": "correct",
+      "reason": ""
+    },
+    "P04": {
+      "grade": "correct",
+      "reason": ""
+    },
+    "P05": {
+      "grade": "correct",
+      "reason": ""
+    },
+    "P06": {
+      "grade": "correct",
+      "reason": ""
+    },
+    "P07": {
+      "grade": "correct",
+      "reason": ""
+    },
+    "P08": {
+      "grade": "incorrect",
+      "reason": "The required continuous counterexample on ℝ is absent. For the compact part the argument also invokes the full-sequence hypothesis at selected function indices without justifying that passage."
+    },
+    "P09": {
+      "grade": "incorrect",
+      "reason": "For g(x)=f(x)−cx the answer establishes the endpoint limits 0 and −c, but never uses the endpoint slopes to force an interior extremum or exhibit derivative values straddling c. It does not establish either ordering in full."
+    },
+    "P10": {
+      "grade": "incorrect",
+      "reason": "The single-spike example is appropriate, but the general zero-integral claim is left unproved. The response never shows that density and nonnegativity make every lower Darboux sum zero. Its assertion that the positive set must be nowhere dense is also false."
+    }
+  },
+  "rubric_sha256": "8eed23069c4241808fa7f163db11aaa8c51296a2834d84c5b23956e04ad3c813",
+  "policy_sha256": "b08324288c5f1ba2295859764f228eadc8fcbaf4cbc8dc728f2047954efb9bd9"
+}

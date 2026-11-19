@@ -1,0 +1,42 @@
+[
+  {
+    "id": "P01",
+    "problem": "Let (a_n) be a real sequence converging to L. Prove directly from the definition of convergence that (a_1 + ⋯ + a_n)/n converges to L."
+  },
+  {
+    "id": "P02",
+    "problem": "Suppose a_1 ≥ a_2 ≥ ⋯ ≥ 0 and Σ_{n=1}^∞ a_n converges. Prove that n a_n tends to zero. Construct a nonnegative summable sequence for which this conclusion fails when monotonicity is dropped."
+  },
+  {
+    "id": "P03",
+    "problem": "Let f:[0,∞)→ℝ be continuous and suppose lim_{x→∞} f(x) exists and is finite. Prove that f is uniformly continuous on [0,∞)."
+  },
+  {
+    "id": "P04",
+    "problem": "For n≥1 define f_n(x)=x/(1+n x²) on ℝ. Prove that f_n converges uniformly to zero, and determine the exact value of sup_{x∈ℝ}|f_n(x)|."
+  },
+  {
+    "id": "P05",
+    "problem": "Let K_1 ⊇ K_2 ⊇ ⋯ be nonempty compact subsets of ℝ. Prove that their intersection is nonempty. Then construct nested, nonempty closed subsets of ℝ with empty intersection."
+  },
+  {
+    "id": "P06",
+    "problem": "Let f:ℝ→ℝ satisfy |f(x)−f(2)|≤3|x−2|^(3/2) whenever |x−2|<1. Prove that f is differentiable at 2 and determine f′(2)."
+  },
+  {
+    "id": "P07",
+    "problem": "For every continuous f:[0,1]→ℝ prove that lim_{n→∞} (n+1)∫₀¹ x^n f(x) dx = f(1)."
+  },
+  {
+    "id": "P08",
+    "problem": "Let f_n:[0,1]→ℝ be functions and f:[0,1]→ℝ continuous. Suppose f_n(x_n)→f(x) whenever a sequence x_n in [0,1] converges to x. Prove that f_n→f uniformly. Give an example showing the implication can fail on ℝ even with all f_n continuous."
+  },
+  {
+    "id": "P09",
+    "problem": "Suppose f is differentiable on (0,1), with finite limits lim_{x↓0} f(x)/x = a and lim_{x↑1} f(x)/(x−1) = b. Prove that for each c strictly between a and b there exists t∈(0,1) with f′(t)=c. Do not assume f′ is continuous."
+  },
+  {
+    "id": "P10",
+    "problem": "Construct a bounded, nonnegative Riemann integrable f on [0,1] whose zero set is dense and whose supremum equals 1. Prove in addition that every bounded, nonnegative Riemann integrable function on [0,1] with dense zero set has integral zero."
+  }
+]

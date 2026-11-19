@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "model_key": "qwen/qwen3.8-27b",
+  "quantization": "Q4_K_M",
+  "instance": "qwen-proof-study",
+  "context_length": 8192,
+  "endpoint": "http://127.0.0.1:1234/v1/chat/completions",
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "max_tokens": 2048,
+    "reasoning_effort": "none",
+    "stream": false
+  },
+  "seed_policy": "Take the first seven hex digits of SHA-256 of UTF-8 'proof-study-v1/{id}/{round}', in base 16. Use round 1 for first attempts and 2 for A, B and C.",
+  "system": "Write for an undergraduate real analysis reader. Justify every material step, including the hypotheses of any theorem you invoke. Put the complete standalone proof between <proof> and </proof>. If you discuss an earlier attempt, put that discussion before <proof>. If you retain a proof, reproduce it in full. Inside the tags give only the mathematics.",
+  "first": "Give a complete proof of the following problem.\n\nProblem\n{problem}",
+  "A": "Check your previous proof step by step. If you find an error or a gap, write a complete corrected proof. If the proof is valid, retain it.",
+  "B": "This proof has been marked incorrect. Identify any errors or gaps and write a complete corrected proof.",
+  "review_format": "{instruction}\n\nProblem\n{problem}\n\nYour first proof\n{proof}"
+}

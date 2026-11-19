@@ -1,0 +1,36 @@
+{
+  "key": "qwen/qwen3.8-27b",
+  "quantization": {
+    "name": "Q4_K_M",
+    "bits_per_weight": 4
+  },
+  "selected_variant": "qwen/qwen3.8-27b@q4_k_m",
+  "size_bytes": 17742040464,
+  "instance": "qwen-proof-study",
+  "load_config": {
+    "context_length": 8192,
+    "eval_batch_size": 2048,
+    "physical_batch_size": 512,
+    "parallel": 1,
+    "flash_attention": true,
+    "context_checkpoints": 32,
+    "reasoning_budget_message": "",
+    "speculative_draft_mtp": true,
+    "speculative_draft_simple": false,
+    "speculative_draft_model": "",
+    "speculative_draft_max_tokens": 3,
+    "speculative_draft_min_tokens": 0,
+    "speculative_draft_min_continue_probability": 0,
+    "offload_kv_cache_to_gpu": true
+  },
+  "advertised_reasoning": {
+    "allowed_options": [
+      "off",
+      "low",
+      "medium",
+      "xhigh",
+      "on"
+    ],
+    "default": "xhigh"
+  }
+}

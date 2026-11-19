@@ -1,0 +1,12 @@
+﻿[
+    {
+        "file":  "mmproj-Qwen3.8-27B-BF16.gguf",
+        "bytes":  931145856,
+        "sha256":  "97ba9d70e7407f08c880def231fd360a312c76d0053387733f10dcf6affd75a1"
+    },
+    {
+        "file":  "Qwen3.8-27B-Q4_K_M.gguf",
+        "bytes":  16810714336,
+        "sha256":  "e00082f779fa385cee8c68a3ec8833a75778cc87272240b942f74e0b8243e520"
+    }
+]

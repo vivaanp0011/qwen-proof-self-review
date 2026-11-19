@@ -1,0 +1,11 @@
+﻿group,metric,numerator,denominator,percent
+rate,First-pass accuracy,6,10,60.0
+rate,Initially incorrect fixed by neutral review,2,4,50.0
+rate,Initially incorrect fixed by flagged review,0,4,0.0
+rate,Initially incorrect fixed by fresh retry,1,4,25.0
+rate,Initially correct broken by neutral review,0,6,0.0
+rate,Accuracy after neutral review,8,10,80.0
+B versus C paired count,Both fixed it,0,4,0.0
+B versus C paired count,Only flagged review fixed it,0,4,0.0
+B versus C paired count,Only fresh retry fixed it,1,4,25.0
+B versus C paired count,Neither fixed it,3,4,75.0

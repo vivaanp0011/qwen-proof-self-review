@@ -1,0 +1,58 @@
+{
+  "grader": "Codex (OpenAI AI assistant)",
+  "human_graded": false,
+  "phase": "pilot first pass",
+  "basis": "Full visible response, all ten problem statements, reference arguments, and problem-specific checkpoints. Independent human verification remains pending.",
+  "decisions": [
+    {
+      "id": "P01",
+      "grade": "correct",
+      "evidence": "The finite head contributes at most C/n. The tail has average absolute error below ε/2. A common cutoff makes their sum below ε. Replacing one auxiliary strict inequality by ≤ when the cutoff equals 1 leaves this proof intact."
+    },
+    {
+      "id": "P02",
+      "grade": "incorrect",
+      "evidence": "The forward block sum is at most M a_M, so its smallness does not bound M a_M from above. The restart obtains a bound on M a_(2M−1) but does not finish the argument for all indices. No nonmonotone summable counterexample is given."
+    },
+    {
+      "id": "P03",
+      "grade": "correct",
+      "evidence": "Borderline cutoff. Qwen explicitly splits a crossing pair at M, proves M−x<δ for the compact term, and restarts with ε/2 for that term and ε/2 for the pair M,y in the tail. These stated bounds add to ε. The original bounds also give <2ε for arbitrary ε. The last case list cuts off, but the requisite estimates are already present."
+    },
+    {
+      "id": "P04",
+      "grade": "correct",
+      "evidence": "The derivative changes sign at 1/√n on the positive half-line. By symmetry the exact supremum is 1/(2√n), which tends to zero. That completes the proof. A later optional ceiling choice misses equality for some ε and does not affect the supremum argument."
+    },
+    {
+      "id": "P05",
+      "grade": "correct",
+      "evidence": "A single convergent subsequence in K₁ is eventually in every closed K_m. Its limit belongs to their intersection. The separate verification of the closed rays [n,∞), including their empty intersection, appears after the closing proof tag."
+    },
+    {
+      "id": "P06",
+      "grade": "correct",
+      "evidence": "For 0<|x−2|<1 the absolute difference quotient is bounded by 3√|x−2|. Squeezing proves the two-sided derivative exists and equals zero."
+    },
+    {
+      "id": "P07",
+      "grade": "correct",
+      "evidence": "The kernel integrates to 1. The final near-end bound is ε/2 and the far-end bound M(1−δ)^(n+1) tends to zero. Both are combined before the duplicate presentation cuts off."
+    },
+    {
+      "id": "P08",
+      "grade": "incorrect",
+      "evidence": "The required continuous counterexample on ℝ is absent. For the compact part the argument also invokes the full-sequence hypothesis at selected function indices without justifying that passage."
+    },
+    {
+      "id": "P09",
+      "grade": "incorrect",
+      "evidence": "For g(x)=f(x)−cx the answer establishes the endpoint limits 0 and −c, but never uses the endpoint slopes to force an interior extremum or exhibit derivative values straddling c. It does not establish either ordering in full."
+    },
+    {
+      "id": "P10",
+      "grade": "incorrect",
+      "evidence": "The single-spike example is appropriate, but the general zero-integral claim is left unproved. The response never shows that density and nonnegativity make every lower Darboux sum zero. Its assertion that the positive set must be nowhere dense is also false."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "grader": "Codex (OpenAI AI assistant)",
+  "human_graded": false,
+  "phase": "pilot blinded review",
+  "basis": "Judgments on the shuffled, anonymous texts. Its display hash identifies the exact text checked. The condition lookup stays unopened by the grader until all grades are recorded.",
+  "decisions": [
+    {
+      "id": "R-FD8BC83EB2",
+      "grade": "correct",
+      "evidence": "The error splits into a finite contribution C/n and a tail smaller than ε/2, with an explicit common cutoff. The text itself notes n−K+1≤n. Strictness of the individual tail estimates suffices when K=1.",
+      "display_sha256": "76554b5437b90948d31babfc56be7b7f13fcbf064acef7f22c0378f61acda1db"
+    },
+    {
+      "id": "R-1592992B14",
+      "grade": "correct",
+      "evidence": "Sequential compactness supplies one limit; closedness puts the tail limit in each nested K_m. The response verifies the closed-ray example is nested, nonempty at every index, and has no common real point.",
+      "display_sha256": "8df3bcd1a283e79f3acd67a452f8c91eb48a5e29cd42eae54dff522115ed8b91"
+    },
+    {
+      "id": "R-F9B817FBA3",
+      "grade": "correct",
+      "evidence": "The spike at 1/2 is bounded, has dense zeros and supremum 1, and has only one point of discontinuity. For any function in the question each partition interval contains a zero, so its nonnegative infimum and every lower sum are zero. Integrability gives the claimed value.",
+      "display_sha256": "32fe10d0bf7750badf50a68e76ead8d1f5a9fced6cbdf76ec86bba1d98e59fcc"
+    },
+    {
+      "id": "R-6D74E82A30",
+      "grade": "incorrect",
+      "evidence": "The extension and the mean value theorem on [0,1] only yield f′=0 somewhere. The response never produces f′=c for arbitrary intermediate c. In the earlier transformation g=f−(a+b)x+b the right endpoint limit is −a, not the asserted 0 in general.",
+      "display_sha256": "33d5269a6d8fde3b57081accc8b7b32fe02c8bfd022c0681c3aee814ff15f78b"
+    },
+    {
+      "id": "R-ECD4F123D7",
+      "grade": "incorrect",
+      "evidence": "The example f_n(x)=x/n on ℝ is correctly verified. For the compact interval, the proof stops after noticing the mismatched index: it never embeds the selected points into a full convergent sequence or otherwise proves that f_(m_j)(y_j) tends to f(x*), so the contradiction is unfinished.",
+      "display_sha256": "c99ec7cfcacb27deb5ffaa54abb4abbeef5a9326361c63a90416d9473af62fc6"
+    },
+    {
+      "id": "R-CF00540BEA",
+      "grade": "incorrect",
+      "evidence": "The spike example is verified. For an arbitrary integrable function the answer establishes only that the positive set has empty interior and that upper and lower sums can be close. It never shows that every interval infimum is zero, or proves another implication forcing the integral to vanish.",
+      "display_sha256": "dc2a48c56c9918bf3db13abb1f782cd9e3505da5d4e54dd6778ae70b4e5346ae"
+    },
+    {
+      "id": "R-E17D98D986",
+      "grade": "incorrect",
+      "evidence": "The compact argument now justifies filling gaps to form a full convergent sequence and gets the contradiction. The requested example on ℝ is never supplied. The earlier xⁿ example on [0,1] fails the observation hypothesis and does not satisfy this part.",
+      "display_sha256": "ced65e717d08102d626518a5a3412ef162ae9f270f115c76db34715ff6fc3452"
+    },
+    {
+      "id": "R-078C4E965C",
+      "grade": "correct",
+      "evidence": "Normalizes the weight, bounds the near interval by ε/2 and the far interval by 2M(1−δ)^(n+1), and combines them. The complete error estimate appears before the last displayed limit is cut off.",
+      "display_sha256": "e8ae91180aa060951f97d4ddce626b416b96d9adcb0a8edd76c595f237c54d2f"
+    },
+    {
+      "id": "R-817AC51833",
+      "grade": "correct",
+      "evidence": "Tail blocks ending at the relevant even and odd indices provide the needed upper bounds. Taking a_(2^k)=1/k² and zero elsewhere yields a summable nonmonotone example with 2^k/k² growing without bound. Both parts are proved.",
+      "display_sha256": "e8d0b8b734ddbb42dcc0a5b42a38c0dab22fbfb9879434645bcc4ac4c8367517"
+    },
+    {
+      "id": "R-0A1F1AD127",
+      "grade": "incorrect",
+      "evidence": "For g(x)=f(x)−cx the right endpoint slope uses (g(x)−g(1))/(x−1), with g(1)=−c. The response repeatedly uses g(x)/(x−1) instead, then stops without forcing an interior extremum or proving the desired derivative value.",
+      "display_sha256": "aa68b9907accc53bd7a825eb9adf17c80a4bd4434a978b1024776876c0a6e231"
+    },
+    {
+      "id": "R-142A4B5A32",
+      "grade": "incorrect",
+      "evidence": "The endpoint-spike example is valid. In the general case the response notes that every cell contains a zero but uses only L(f,P)≥0. It never derives L(f,P)=0 or obtains the promised upper sums below ε. Its last inequality is unfinished.",
+      "display_sha256": "b24a29419b4b6d1c689e4b3113c0eb8b30175d0c6229dcd0c8009d51cbdbe996"
+    },
+    {
+      "id": "R-33B65B4F39",
+      "grade": "correct",
+      "evidence": "The response divides by |x−2| on the punctured neighborhood, obtains the bound 3√|x−2|, and justifies the two-sided zero limit for the difference quotient. It correctly identifies f′(2)=0.",
+      "display_sha256": "9ff3025e612f67a6a3cd058d44fa35defaa2b0e9311a86a5f6f30adc2f0d40d0"
+    },
+    {
+      "id": "R-199A4C1750",
+      "grade": "correct",
+      "evidence": "The response chooses M beyond the tail cutoff, gets compact uniform control on [0,M+1], and sets δ≤1. A pair straddling M lies in that compact interval, and a pair entirely in the tail is controlled through the common limit. All pairs are covered.",
+      "display_sha256": "e1095329615028795e68081441cbbe2bd08a87f457996656bdc30b570b5a689e"
+    },
+    {
+      "id": "R-78CBC48F85",
+      "grade": "incorrect",
+      "evidence": "The odd/even block proof works, but the proposed spikes are a_(k²)=1/k. Their sum is the divergent harmonic series, not Σ1/k². The listed values suggest a different sequence and contradict the computed products, so the counterexample is not verified as written.",
+      "display_sha256": "af41714a97695d5692fa7da934e15da2b86333490e40b6b8acfb7c152abffacf"
+    },
+    {
+      "id": "R-934DFA15CA",
+      "grade": "incorrect",
+      "evidence": "It supplies no example on ℝ. It also restates the given hypothesis in a stronger subsequence form without proving it, and the displayed upper triangle bound does not itself imply the asserted lower bound.",
+      "display_sha256": "54cbc441bb7f0ba1147e02c552374f8db9935788074ea1f49704aac8a59e46ec"
+    },
+    {
+      "id": "R-73EC55A697",
+      "grade": "correct",
+      "evidence": "The final block estimate correctly uses n−⌊n/2⌋≥n/2 and the vanishing tail. After rejecting two bad examples, it specifies b_n=1/n at square indices and zero elsewhere, and computes the convergent sum Σ1/k². The text cuts off at the final check; n b_n=1 on every square is immediate from that explicit formula.",
+      "display_sha256": "23758d4d877a5be5f7fda69257697b0adc41518d05525ad86400f51e0b136d25"
+    },
+    {
+      "id": "R-61B9C2F21F",
+      "grade": "incorrect",
+      "evidence": "For a<c<b the response obtains g(x)<0 near 0 and g(x)<−c near 1, but never extends g to the compact interval and uses these comparisons to force an attained interior minimum. It continues searching for a sign change and stops mid-case. Listing the extremum as a goal does not establish its existence.",
+      "display_sha256": "a8b4bd32e78478a6efc21b213e358c5cc2458dd597580c03e7013fd3b90f8022"
+    },
+    {
+      "id": "R-4440955E55",
+      "grade": "correct",
+      "evidence": "AM–GM gives a sharp maximum 1/(2√n) at |x|=1/√n, and this supremum tends to zero. That independently proves uniform convergence. The optional ceiling in the later ε proof can give equality at its starting index, a harmless error for the already completed proof.",
+      "display_sha256": "468ee0bb9644bbfe0af6c16a1a838239e70ac195c5823f302e1424eaee9373d6"
+    }
+  ]
+}

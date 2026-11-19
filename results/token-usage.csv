@@ -1,0 +1,5 @@
+﻿condition,completed,input_tokens,output_tokens,mean_input,mean_output,truncated,api_errors,unconfirmed_requests
+First attempt,10,1523,19744,152.3,1974.4,8,0,0
+Neutral review,10,21545,18248,2154.5,1824.8,6,0,0
+Flagged review,4,8918,8192,2229.5,2048.0,4,0,0
+Fresh retry,4,666,8192,166.5,2048.0,4,0,0

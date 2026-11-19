@@ -1,0 +1,189 @@
+% Build twice with pdfLaTeX. verify.py generates the table rows from saved results.
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,xcolor}
+\usepackage[letterpaper,top=.79in,bottom=.78in,left=.98in,right=.98in,footskip=.33in]{geometry}
+\usepackage{hyperref}
+\definecolor{teal}{HTML}{145F63}
+\hypersetup{colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal,
+ pdftitle={Self-review of real-analysis proofs},pdfauthor={Vivaan Pinglikar},
+ pdfsubject={A local Qwen3.8-27B pilot benchmark with a Lean audit}}
+\urlstyle{same}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{2.5pt}
+\setlength{\emergencystretch}{1.7em}
+\raggedbottom
+\newcommand{\cut}{\textsuperscript{*}}
+\newcommand{\lead}[1]{\par\smallskip\noindent\textbf{#1}\enspace\ignorespaces}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\quoted}[1]{\textquotedblleft{}#1\textquotedblright{}}
+\input{tables}
+\begin{document}
+\begin{center}
+  {\LARGE\bfseries Self-review of real-analysis proofs\par}
+  \vspace{3pt}
+  {\large A local Qwen3.8-27B pilot benchmark with a Lean audit\par}
+  \vspace{7pt}
+  {\large Vivaan Pinglikar\par}
+  {\small\itshape Independent researcher\par}
+  {\small November 2026\par}
+\end{center}
+\begin{abstract}
+I tested whether asking Qwen to check a proof helped it correct mistakes.
+On ten handpicked problems, a neutral request to review its work raised the
+score from 6/10 to 8/10. Of the four first attempts graded incorrect, neutral
+review repaired two, a fresh retry repaired one, and review with an explicit
+error flag repaired none. A retrospective audit used Lean to check solutions
+to all ten problems and retained all 28 prose grades. Every follow-up on an
+initial error reached the output limit. The extra repair from neutral review
+came from one problem.
+\end{abstract}
+
+\section{Benchmark design}
+I ran all 28 generations locally on my computer using LM Studio. The ten
+problems cover sequences and series, continuity, uniform convergence,
+compactness, differentiation and integration. Three were rated easy, four
+medium and three hard. They were chosen to span topics and difficulty.
+Variants of these classical exercises may have appeared in the model's
+training data.
+
+Each first attempt used the same instruction and a fresh context. \emph{Neutral
+review} (A) gave Qwen the problem and its first answer and asked it to check each
+step. Every problem received A. For the four initial errors, \emph{flagged
+review} (B) supplied the same answer and an incorrect verdict without the
+grader's reason. A \emph{fresh retry} (C) gave only the original problem and
+first-attempt instructions. Each follow-up started in a new context with the
+same output budget and sampling settings. The three follow-ups on a given
+problem shared a second-round seed. Reference proofs and rubrics were private
+during generation.
+
+\section{Results}
+\begin{center}
+\small\renewcommand{\arraystretch}{1.13}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Condition & Correct / attempted & Initial errors repaired & Cutoffs / attempted\\
+\midrule
+\resultrows
+\bottomrule
+\end{tabular}
+\end{center}
+
+Neutral review preserved all six initially correct answers (0/6 broken).
+For the paired comparison of flagged review with a fresh retry, both fixed
+zero problems, flagged review alone fixed zero, fresh retry alone fixed one
+(P02), and neither fixed three. B versus C changes both access to the first
+answer and the wording of the instruction. A versus B on the four errors
+holds access to the first answer fixed.
+
+\clearpage
+\section{Grading and formal verification}
+One AI grader assessed the entire visible response, including mathematics
+outside the requested proof tags. Any sound method could earn credit. A
+material gap, circular reasoning, an unjustified theorem or an omitted
+part earned an incorrect grade. The rubric allowed routine algebra to be
+implicit. Second-round responses were shuffled and their condition labels
+hidden before grading. Some wording could still suggest a condition.
+
+In a separate retrospective audit, Lean~4.19.0 checked formal solutions to
+all ten questions, including the requested examples. The project contains
+37 named theorems, with their assumptions and machine-checkable proofs.
+The AI audit compared the archived English answers with those arguments and
+the original rubric. It had access to the earlier grades and condition labels.
+Lean verifies that a formal argument follows from its assumptions. Deciding
+whether a sentence in Qwen's answer supplied a necessary step still required
+judgment. The audit retained all 28 grades. Independent human grading remains
+outstanding.
+
+\lead{P10. Why neutral review earned the extra repair.}
+A graph can reach height one at a single point and still have zero area. The
+problem also asked why \emph{every} nonnegative, Riemann integrable function
+with a zero in every interval has zero area. Neutral review explained that
+the lowest height on each interval is zero. Every lower estimate of the area
+is therefore zero, and integrability gives the result. The fresh retry
+noticed the zeros but used only that its lower estimates were at least zero.
+Its final inequality cut off. Lean checked both single-point examples and
+the general lower-sum argument.
+
+\lead{P02. A missing multiplication.}
+The fresh retry placed \(1/n\) at the square indices \(n=1,4,9,\ldots\), with
+zeros between them, and showed the series has a finite sum. It stopped just
+before checking the product \(n(1/n)\). Lean verified that this product is
+one at every square, so it cannot tend to zero. The original rubric credits
+that routine calculation. Requiring the last line in print would change
+fresh retry from 1/4 repairs to 0/4. Flagged review used height \(1/k\) at
+index \(k^2\), whose sum diverges. The audit checked this error as well.
+
+\section{Output budget and interpretation}
+\begin{center}
+\small\renewcommand{\arraystretch}{1.06}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Condition & Replies & Input tokens & Output tokens & Cutoffs\\ \midrule
+\costrows
+\bottomrule\end{tabular}
+\end{center}
+
+On the same four initial errors, A, B and C each produced 8,192 output tokens.
+Their input totals were 8,970, 8,918 and 666, respectively. LM Studio recorded
+zero API errors. Nine of the 22 cutoffs already contained a valid proof.
+
+Only four problems were eligible for all three follow-ups. One grade changes
+a repair rate by 25 percentage points. These are descriptive results for a
+handpicked set with one generation per condition per eligible problem.
+Repeated draws, independent grading and a larger sample would be needed
+to estimate how reliably the pattern carries over.
+
+\clearpage
+\appendix
+\section{Problem outcomes and replication}
+\begin{center}
+\small\renewcommand{\arraystretch}{1.07}
+\begin{tabular}{@{}llcccc@{}}\toprule
+ID & Problem & First & Neutral & Flagged & Fresh\\ \midrule
+\itemrows
+\bottomrule\end{tabular}
+\end{center}
+\noindent\small An asterisk marks a reply that reached the 2,048-token cap.
+A dash marks a condition outside the allocation. A gap denotes an incorrect
+or incomplete proof. P03's first proof was a close cutoff decision. It had
+already bounded the two sides of the crossing case before its restatement
+ended. The per-answer audit explains the decision.\normalsize
+
+\lead{Model and prompts.}
+The local model key was \code{qwen/qwen3.8-27b}, quantized as \code{Q4_K_M}.
+The context length was 8,192 tokens, temperature \(0.7\), top-\(p\) \(0.9\),
+maximum output 2,048 tokens and requested reasoning effort \code{none}.
+The archive includes the model-file hashes, observed load settings and all
+request seeds. Each request contained exactly one system message and one
+user message. The user instructions were as follows.
+
+\begin{description}\small\setlength{\itemsep}{1pt}
+\item[First and fresh.] \quoted{Give a complete proof of the following problem.}
+\item[Neutral.] \quoted{Check your previous proof step by step. If you find an error or a gap,
+write a complete corrected proof. If the proof is valid, retain it.}
+\item[Flagged.] \quoted{This proof has been marked incorrect. Identify any errors or gaps and
+write a complete corrected proof.}
+\end{description}
+
+\lead{Research materials.}
+The public repository contains the ten problems, exact prompts, all 28
+responses, blinded grading displays, reasons for each decision, token counts
+and the pinned Lean project. The verification script reconstructs each request
+and reproduces the tables without calling Qwen. It also checks the saved
+review grades against the hashes recorded before unblinding.
+\href{https://github.com/vivaanp0011/qwen-proof-self-review}{github.com/vivaanp0011/qwen-proof-self-review}.
+
+\lead{Related work.}
+Self-Refine studied iterative feedback and revision across generation tasks
+\cite{madaan}. Huang et al.\ tested whether models could correct their own
+reasoning \cite{huang}. The fresh-retry condition here asks how much of any
+improvement might also occur from another attempt on the same question.
+
+\begin{thebibliography}{2}
+\small\raggedright
+\bibitem{madaan} A. Madaan et al.\ \emph{Self-Refine: Iterative Refinement with Self-Feedback}.
+NeurIPS, 2023. \href{https://arxiv.org/abs/2303.17651}{arXiv:2303.17651}.
+\bibitem{huang} J. Huang et al.\ \emph{Large Language Models Cannot Self-Correct Reasoning Yet}.
+ICLR, 2024. \href{https://arxiv.org/abs/2310.01798}{arXiv:2310.01798}.
+\end{thebibliography}
+\end{document}
